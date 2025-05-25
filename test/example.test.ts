@@ -1,5 +1,5 @@
-import { parse } from ".";
-import { evaluate, factor, term } from "./example";
+import { parse } from "../src";
+import { evaluate, factor, term } from "../src/example";
 
 test("term", () => {
   expect(parse(term)("2 + 3 + 4")).toEqual([[2, " + 3 + 4"]]);

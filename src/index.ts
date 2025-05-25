@@ -6,7 +6,7 @@ export const parse = <T>(parser: Parser<T>) => {
 
 export const item: Parser<string> = (input) => {
   switch (input) {
-    case '':
+    case "":
       return [];
     default:
       return [[input[0], input.slice(1)]];
@@ -76,7 +76,7 @@ export const char = (x: string) => sat((y) => x === y);
 
 export const str = (s: string): Parser<string> => {
   switch (s) {
-    case '':
+    case "":
       return pure(s);
     default:
       return bind(char(s[0]), () => bind(str(s.slice(1)), () => pure(s)));
@@ -101,14 +101,14 @@ export const some = <T>(parser: Parser<T>): Parser<T[]> => {
 };
 
 export const ident = bind(lower, (x) =>
-  bind(many(alphanum), (xs) => pure(x + xs.join('')))
+  bind(many(alphanum), (xs) => pure(x + xs.join("")))
 );
-export const nat = bind(some(digit), (xs) => pure(parseInt(xs.join(''), 10)));
+export const nat = bind(some(digit), (xs) => pure(parseInt(xs.join(""), 10)));
 const isSpace = (x: string) => /\s/.test(x);
 export const space = bind(many(sat(isSpace)), () => pure(null));
 
 export const int = orElse(
-  bind(char('-'), () => bind(nat, (n: number) => pure(-n))),
+  bind(char("-"), () => bind(nat, (n: number) => pure(-n))),
   nat
 );
 
@@ -123,7 +123,7 @@ export const symbol = (s: string) => token(str(s));
 
 export const nats = bind(symbol(`[`), () =>
   bind(natural, (n) =>
-    bind(many(bind(symbol(','), () => natural)), (ns) =>
+    bind(many(bind(symbol(","), () => natural)), (ns) =>
       bind(symbol(`]`), () => pure([n, ...ns]))
     )
   )

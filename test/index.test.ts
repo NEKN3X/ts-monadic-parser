@@ -16,7 +16,7 @@ import {
   some,
   space,
   str,
-} from "./";
+} from "../src";
 
 test("item", () => {
   const result = parse(item);
