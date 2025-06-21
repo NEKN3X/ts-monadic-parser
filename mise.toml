@@ -7,3 +7,6 @@
 
 [tasks.build]
   run = "pnpm build"
+
+[tasks.publish]
+  run = "pnpm publish"
