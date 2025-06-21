@@ -1,4 +1,12 @@
-import { bind, natural, orElse, parse, Parser, pure, symbol } from ".";
+import {
+  bind,
+  natural,
+  orElse,
+  parse,
+  Parser,
+  pure,
+  symbol,
+} from "./parser.js";
 
 export const factor: Parser<number> = orElse(
   bind(symbol("("), () => bind(expr, (e) => bind(symbol(")"), () => pure(e)))),

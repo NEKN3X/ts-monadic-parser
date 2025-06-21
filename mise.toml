@@ -1,0 +1,9 @@
+[tools]
+  node = "latest"
+  pnpm = "latest"
+
+[tasks.test]
+  run = "pnpm test"
+
+[tasks.build]
+  run = "pnpm build"

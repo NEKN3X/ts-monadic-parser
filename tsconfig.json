@@ -3,13 +3,13 @@
     "outDir": "./dist",
     "declaration": true,
     "declarationDir": "./dist",
-    "module": "ESNext",
-    "target": "ES2019",
-    "moduleResolution": "Node",
+    "module": "node16",
+    "moduleResolution": "node16",
+    "target": "esnext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["src"]
+  "include": ["src", "test"]
 }

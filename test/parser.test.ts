@@ -16,7 +16,7 @@ import {
   some,
   space,
   str,
-} from "../src";
+} from "../src/parser.js";
 
 test("item", () => {
   const result = parse(item);
